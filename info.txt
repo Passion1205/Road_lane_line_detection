@@ -1,0 +1,123 @@
+optparse is a more convenient, flexible, and powerful library for parsing command-line options than the old getopt module. optparse uses a more declarative style of command-line parsing: you create an instance of OptionParser , populate it with options, and parse the command line.
+opt_str: A string specifying the option's short and long forms. For example, -f or --file.
+dest: The name of the attribute where the option's value will be stored when parsed.
+type: The data type to which the option's value should be converted.
+help: A help message or description of the option that will be displayed when the user requests help for the script.
+
+mpimg.imread - to read image from a file into an array
+
+resultarray = inRange(sourcearray, upperboundarray, lowerboundarray)
+Where,
+sourcearray is the array whose elements are to be compared with the arrays representing upper bounds and lower bounds.
+upperboundarray is the array consisting of elements representing upper bounds.
+lowerboundarray is the array consisting of elements representing lower bounds.
+resultarray is the array representing the elements equal to either 255 or 0 returned from inRange() function.
+
+bitwise_and(source1_array, source2_array, destination_array, mask)
+where source1_array is the array corresponding to the first input image on which bitwise and operation is to be performed,
+source2_array is the array corresponding to the second input image on which bitwise and operation is to be performed,
+destination_array is the resulting array by performing bitwise operation on the array corresponding to the first input image and the array corresponding to the second input image and
+mask is the mask operation to be performed on the resulting image and it is optional.
+
+cvtColor(image, code)
+where the image is the image whose color space is to be converted,
+code is the color space conversion code.
+
+img = cv2.addWeighted(source1, alpha, source2, beta, gamma[, dst[, dtype]])
+Here we add the image and then add the pixel values. The new image is the source where we will multiply the alpha value and the second source with the beta value. The gamma value will be added to this value and help in processing and alpha blending the image.
+
+
+GaussianBlur(source_image, kernel_size, sigmaX)
+Where,
+source_image is the image that is to be blurred using Gaussian Blur() function.
+kernel_size is the matrix representing the size of the kernel.
+sigmaX is a variable representing the standard deviation of Gaussian kernel in X direction and it is of type double.
+description In order to be able to reduce the clarity of images or to make the images distinct or to remove the noise from the images or to reduce the details from the images, we make use of Gaussian blurring.
+
+
+OpenCV. Canny() Function in OpenCV is used to detect the edges in an image.
+Syntax: cv2.Canny(image, T_lower, T_upper, aperture_size, L2Gradient)
+Where: 
+Image: Input image to which Canny filter will be applied
+T_lower: Lower threshold value in Hysteresis Thresholding
+T_upper: Upper threshold value in Hysteresis Thresholding
+aperture_size: Aperture size of the Sobel filter.
+L2Gradient: Boolean parameter used for more precision in calculating Edge Gradient.
+
+
+The lines you provided are defining the vertices array, which is used to create a trapezoidal-shaped region of interest (ROI) in the image for lane detection. 
+
+
+fillPoly() function of OpenCV is used to draw filled polygons like rectangle, triangle, pentagon over an image. This function takes inputs of an image and endpoints of Polygon and color.
+Syntax: cv2.fillpoly(Image,End_Points,Color)
+Parameter:
+Image: This is image on which we want draw filled polygon
+End_Points: Points of polygon(for triangle 3 end points, for rectangle 4 end points will be there)
+Color: It specifies the color of polygon
+
+
+Image masking is a technique commonly used in graphic design and photo editing. It involves the process of selectively hiding or revealing certain portions of an image while keeping other parts visible. This technique is often employed to create precise and intricate edits in photos, allowing for seamless integration of objects, adjustment of backgrounds, or the application of various visual effects.
+
+
+Hough Transform. A feature extraction method used to detect the simple shapes such as lines, circles etc. in an image is called hough transform and such simple shapes can be represented by parameters like slope and intercept are the two parameters to represent a line and the center coordinates and radius are the three parameters to represent a circle and in hough transform we make use of HoughLines() function and HoughLinesP() function to detect the lines in an image and we make use of HoughCircles() function to detect circles in an image and all these functions return an image with lines and circles detected in the image.
+A more efficient implementation of the Hough Line Transform. It gives as output the extremes of the detected lines (x0,y0,x1,y1)
+In OpenCV it is implemented with the function HoughLinesP()
+parameters:
+image	8-bit, single-channel binary source image. The image may be modified by the function.
+lines	output vector of lines(cv.32FC2 type). Each line is represented by a two-element vector (ρ,θ) . ρ is the distance from the coordinate origin (0,0). θ is the line rotation angle in radians.
+rho	distance resolution of the accumulator in pixels.
+theta	angle resolution of the accumulator in radians.
+threshold	accumulator threshold parameter. Only those lines are returned that get enough votes
+srn	for the multi-scale Hough transform, it is a divisor for the distance resolution rho . The coarse accumulator distance resolution is rho and the accurate accumulator resolution is rho/srn . If both srn=0 and stn=0 , the classical Hough transform is used. Otherwise, both these parameters should be positive.
+stn	for the multi-scale Hough transform, it is a divisor for the distance resolution theta.
+min_theta	for standard and multi-scale Hough transform, minimum angle to check for lines. Must fall between 0 and max_theta.
+max_theta	for standard and multi-scale Hough transform, maximum angle to check for lines. Must fall between min_theta and CV_PI.
+
+
+Below is the syntax of the polyfit method in numpy.
+numpy.polyfit( x , y , deg , rcond = None , full = False, w = None, cov = False)
+Parameters:
+x: This parameter is array-like which is of the shape of (M,) size.
+– Represents the M sample x-coordinate value of (x[i], y[i]).
+y: This parameter is array-like which is of the shape of (M,) or (M, K) size.
+– Represents the M sample y-coordinate value of (x[i], y[i]).
+Deg: int value which is the fitting polynomial degree.
+rcond: float value which is considered as optional.
+-This parameter represents the relative condition value of the fit.
+– Singular numbers that are less than this relative condition to the highest singular value can be avoided.
+-len(x)*ep is the default value of rcond.
+-Here, ep is the relative precision of the type float.
+-In most cases, 2e-16 is the value.
+full: A boolean value which is optional
+-This is considered as a switch that is responsible for the nature of value returned.
+-If the value is false, it returns the coefficients.
+– If the value is true, it returns the diagnostic data from the singular value decomposition.
+w: This parameter is array-like which is of the shape of (M,) size.
+-This parameter weights to put to the sample point’s y-coordinates.
+-In the case of Gaussian uncertainties, 1/sigma has to be used instead of   1/sigma**2
+cov: A boolean value which is optional
+-This parameter returns the estimate as well as the estimated covariance matrix.
+-If the value of full is true, this parameter won’t return.
+
+
+Different geometric shapes like line, circle, etc. needs to be drawn on an image in cases when we are trying to solve the computer vision problems and in order to draw a line on a given image, we make use of a function called line() function in OpenCV using which a line beginning from a given starting point and ending at a given end point of required thickness and required color can be drawn on a given image and the image with a line drawn on it as per the specifications is returned as the output by making use of line() function.
+The syntax to define line() function in OpenCV is as follows:
+line(image, starting_point, ending_point, color, thickness)
+ where image is the image on which the line must be drawn,
+starting_point is the x coordinate and y coordinate from which the line should begin,
+ending_point is the x coordinate and y coordinate at which the line should end,
+color represents the color of the line to be drawn on the given image and
+thickness is the thickness of the line to be drawn on the given image.
+
+
+The fl_image function in MoviePy is used to apply a given function to each frame of a video clip. It is commonly used for video processing tasks where you want to transform or annotate each frame of a video.
+
+
+The VideoFileClip.write_videofile() function is a method provided by the MoviePy library in Python for writing and saving video files with various formats and options. It is commonly used to export processed or annotated video clips. Below, I'll explain the function, its parameters, and its return value:
+Parameters:
+filename (str): The name of the output video file, including the file extension (e.g., ".mp4"). This is the only required parameter.
+fps (float or None, optional): The frames per second (FPS) of the output video. If set to None, it will use the same FPS as the input video clip.
+codec (str or None, optional): The codec to use for video compression. Examples include 'libx264' for H.264 encoding or 'mpeg4' for MPEG-4 encoding. If set to None, the codec is selected based on the file extension.
+bitrate (str or None, optional): The bitrate of the output video in kilobits per second (Kbps). If set to None, it uses the default bitrate.
+audio (bool, optional): Whether to include audio in the output video. Default is True.
+audio_fps (int, optional): The audio frames per second (FPS) of the output audio stream. Default is 44100.
